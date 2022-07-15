@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SuiSui.zz.controller.LoginController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/background.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="login_button" layoutX="259.0" layoutY="370.0" mnemonicParsing="false" onMouseClicked="#LoginClicked" text="登录" />
+      <TextField fx:id="user_name" layoutX="272.0" layoutY="244.0" />
+      <TextField fx:id="user_password" layoutX="272.0" layoutY="289.0" />
+      <Label layoutX="226.0" layoutY="248.0" text="账号" />
+      <Label layoutX="226.0" layoutY="293.0" text="密码" />
+      <CheckBox fx:id="remeber" layoutX="314.0" layoutY="334.0" mnemonicParsing="false" text="记住密码" />
+   </children>
+</AnchorPane>
