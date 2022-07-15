@@ -1,0 +1,26 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="SuiSui">
+    <output-path>$PROJECT_DIR$/out/artifacts/SuiSui</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="SuiSui.zz.Main" />
+        <option name="description" value="!!!" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="icons">
+          <JavaFxApplicationIcons>
+            <option name="windowsIcon" value="$PROJECT_DIR$/resources/image/favicon(1).ico" />
+          </JavaFxApplicationIcons>
+        </option>
+        <option name="nativeBundle" value="all" />
+        <option name="title" value="SuiSui" />
+        <option name="vendor" value="ZZ" />
+        <option name="version" value="BEAT-0.0.1" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="SuiSui.jar">
+        <element id="module-output" name="SuiSui" />
+      </element>
+    </root>
+  </artifact>
+</component>

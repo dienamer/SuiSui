@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="SuiSui.jnlp">
+  <information>
+    <title>SuiSui</title>
+    <vendor>ZZ</vendor>
+    <description>!!!</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="SuiSui.jar" size="151302" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.20.jar" size="802721" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="600" height="400" main-class="SuiSui.zz.Main"  name="SuiSui" />
+  <update check="background"/>
+</jnlp>
