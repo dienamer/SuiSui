@@ -1,0 +1,19 @@
+#user_password {
+    -fx-border-radius: 10px;
+    -fx-border-width: 3px;
+    -fx-border-color: cadetblue;
+    -fx-background-color: cadetblue;
+    -fx-border-style: dashed;
+    -fx-border-image-slice: fill;
+}
+
+
+#user_name {
+    -fx-border-radius: 10px;
+    -fx-border-width: 3px;
+    -fx-border-color: cadetblue;
+    -fx-background-color: cadetblue;
+}
+#login_button {
+    -fx-border-width: 10px;
+}

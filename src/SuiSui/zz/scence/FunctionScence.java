@@ -1,23 +1,50 @@
 package SuiSui.zz.scence;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class FunctionScence {
-    public static void load(Stage stage)
-    {
+    private Stage stage;
+    private Button music;
+    private Button chat;
+    public static FunctionScence functionScence = new FunctionScence();
 
-        try {
-            Parent root = FXMLLoader.load(LoginScence.class.getResource("/fxml/function.fxml"));
-            stage.setHeight(600);
-            stage.setWidth(600);
-            stage.getScene().setRoot(root);
-        } catch (IOException e) {
-            e.printStackTrace();
+    public void init(Stage stage) {
+        this.stage = stage;
+        this.music = new Button("播放器");
+        this.chat = new Button("聊天室");
+        FlowPane pane = new FlowPane();
+        pane.getChildren().addAll(music, chat);
+        Scene scene = new Scene(pane);
+        this.stage.setScene(scene);
+        setAction();
+        this.stage.show();
+    }
+
+    private  class Controller implements EventHandler<javafx.event.ActionEvent> {
+
+
+        @Override
+        public void handle(ActionEvent event) {
+            try {
+                MusicPlayScence.musicPlayScence.init(stage);
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
-
+    }
+    public void setAction(){
+        this.music.setOnAction(new Controller());
     }
 }

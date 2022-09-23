@@ -1,69 +1,63 @@
 package SuiSui.zz.scence;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class IndexScence {
-    private double width,higth;
-    private double x,y;
+
+    Button loginButton;
+    AnchorPane pane;
+    Scene scene;
     private Stage stage;
     private static  IndexScence instance = new IndexScence();
     public static IndexScence getInstance() {
         return instance;
     }
 
-//    AnchorPane root = new AnchorPane();
-//    Scene scene = new Scene(root , WIDTH, HEIGHT);
-//        stage.setTitle("坦克");
-//        stage.getIcons().add(new Image("image/logo.png"));
-//        stage.setResizable(false);
-//        stage.setScene(scene);
-//        stage.setWidth(WIDTH);
-//        stage.setHeight(HEIGHT);
-//        this.stage = stage;
-//    toIndex();
-//        stage.show();
+    private class IndexController implements EventHandler<ActionEvent>{
+        @Override
+        public void handle(ActionEvent event) {
+            Button button = (Button) event.getSource();
+            if( button.getText().equals("登录"))
+            {
+                LoginScence.getLoginScence().init(stage);
+
+            }
+        }
+    }
     public void init(Stage stage)
     {
-        Button loginButton = new Button("登录");
+        //Application.setUserAgentStylesheet(getClass().getResource("/css/Index.css").toExternalForm());
+        this.stage=stage;
+
+        loginButton = new Button("登录");
         loginButton.setLayoutX(250);
         loginButton.setLayoutY(400);
         loginButton.setPrefWidth(40);
         loginButton.setPrefHeight(30);
-        loginButton.setOnAction(event -> {
-            toLogin();
-        });
-        AnchorPane root = new AnchorPane();
-        root.getChildren().add(loginButton);
-        Scene scene = new Scene(root , width, higth);
+
+        pane = new AnchorPane();
+        pane.setStyle("-fx-background-image: url(image/background.jpg);" +
+                        "-fx-background-size: 100%");
+        pane.getChildren().addAll(loginButton);
+
+        scene = new Scene(pane);
         stage.setTitle("登录界面");
-        this.x=250;
-        this.y=250;
-        this.width=960;
-        this.higth=480;
-        this.stage=stage;
         stage.setScene(scene);
-        this.stage.setWidth(width);
-        this.stage.setHeight(higth);
+        stage.setResizable(false);
+
+        this.stage.setWidth(600);
+        this.stage.setHeight(600);
         this.stage.show();
+
+
+
+        loginButton.setOnAction(new IndexController());
     }
-    public void toLogin()
-    {
-        this.init(this.stage);
-        LoginScence.load(stage);
-    }
-    public void toFunction()
-    {
-        this.init(this.stage);
-        FunctionScence.load(stage);
-    }
-    public void toMusicPlay()
-    {
-        this.init(this.stage);
-        MusicPlayScence.load(stage);
-    }
+
 
 }
